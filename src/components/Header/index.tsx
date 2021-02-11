@@ -11,6 +11,10 @@ import * as MoviesActions from "./../../store/ducks/Movies/actions";
 const Header = () => {
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    dispatch(MoviesActions.loadRecomendedsRequest());
+  }, []);
   return (
     <Container>
       <div>

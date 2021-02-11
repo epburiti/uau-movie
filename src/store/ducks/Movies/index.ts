@@ -11,6 +11,7 @@ const INITIAL_STATE = {
   },
   loading: false,
   error: false,
+  recomended: false,
 };
 
 const reducer = (state = INITIAL_STATE, action: any) => {
@@ -29,11 +30,18 @@ const reducer = (state = INITIAL_STATE, action: any) => {
         draft.searchValue = action.searchValue;
       });
     case MoviesTypes.SEARCH_SUCCESS:
+      return produce(state, (draft) => {
+        draft.data = action.payload;
+        draft.loading = false;
+        draft.error = false;
+        draft.recomended = false;
+      });
     case MoviesTypes.LOAD_RECOMENDEDS_SUCCESS:
       return produce(state, (draft) => {
         draft.data = action.payload;
         draft.loading = false;
         draft.error = false;
+        draft.recomended = true;
       });
     case MoviesTypes.SEARCH_FAIL:
       return produce(state, (draft) => {

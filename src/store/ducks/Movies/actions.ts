@@ -11,7 +11,7 @@ export const searchSuccess = (object: any) => ({
   type: MoviesTypes.SEARCH_SUCCESS,
   payload: object,
 });
-export const loadRecomendedsRequest = (searchValue: String, page: number) => ({
+export const loadRecomendedsRequest = () => ({
   type: MoviesTypes.LOAD_RECOMENDEDS_REQUEST,
 });
 

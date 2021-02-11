@@ -17,6 +17,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const movies = useSelector((state: RootState) => state.Movies.data.results);
+  const recomended = useSelector((state: RootState) => state.Movies.recomended);
   const dataMovies = useSelector((state: RootState) => state.Movies.data);
   const searchValueMovie = useSelector(
     (state: RootState) => state.Movies.searchValue
@@ -92,49 +93,51 @@ const Home = () => {
         ))}
       </ContainerCards>
 
-      <ContainerButtonsPagination>
-        <div className="container">
-          {dataMovies.page !== 1 && (
-            <button
-              onClick={() => {
-                dispatch(
-                  MoviesActions.searchRequest(
-                    searchValueMovie,
-                    dataMovies.page - 1
-                  )
-                );
-              }}
-            >
-              Anterior
-            </button>
-          )}
-          {myPagiableButtons.map((item: number, index: number) => (
-            <button
-              key={index}
-              className={dataMovies.page === item ? "active" : ""}
-              onClick={() => {
-                dispatch(MoviesActions.searchRequest(searchValueMovie, item));
-              }}
-            >
-              {item}
-            </button>
-          ))}
-          {dataMovies.total_pages != dataMovies.page && (
-            <button
-              onClick={() => {
-                dispatch(
-                  MoviesActions.searchRequest(
-                    searchValueMovie,
-                    dataMovies.page + 1
-                  )
-                );
-              }}
-            >
-              Próximo
-            </button>
-          )}
-        </div>
-      </ContainerButtonsPagination>
+      {!recomended && (
+        <ContainerButtonsPagination>
+          <div className="container">
+            {dataMovies.page !== 1 && (
+              <button
+                onClick={() => {
+                  dispatch(
+                    MoviesActions.searchRequest(
+                      searchValueMovie,
+                      dataMovies.page - 1
+                    )
+                  );
+                }}
+              >
+                Anterior
+              </button>
+            )}
+            {myPagiableButtons.map((item: number, index: number) => (
+              <button
+                key={index}
+                className={dataMovies.page === item ? "active" : ""}
+                onClick={() => {
+                  dispatch(MoviesActions.searchRequest(searchValueMovie, item));
+                }}
+              >
+                {item}
+              </button>
+            ))}
+            {dataMovies.total_pages != dataMovies.page && (
+              <button
+                onClick={() => {
+                  dispatch(
+                    MoviesActions.searchRequest(
+                      searchValueMovie,
+                      dataMovies.page + 1
+                    )
+                  );
+                }}
+              >
+                Próximo
+              </button>
+            )}
+          </div>
+        </ContainerButtonsPagination>
+      )}
     </Container>
   );
 };
