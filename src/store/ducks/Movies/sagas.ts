@@ -10,7 +10,7 @@ export function* searchRequest(payload: Payload): SagaIterator {
   try {
     const { data: response } = yield call(
       api.get,
-      `/search/movie?api_key=27495bf0d364fe0cc23f7fe9118b89e4&language=pt-br&query=${payload.searchValue}&page=${payload.page}&include_adult=false`
+      `/search/movie?language=pt-br&query=${payload.searchValue}&page=${payload.page}&include_adult=false`
     );
     yield put(searchSuccess(response));
   } catch (err) {
@@ -23,7 +23,7 @@ export function* loadRecomendeds(): SagaIterator {
   try {
     const { data: response } = yield call(
       api.get,
-      `/movie/popular?api_key=27495bf0d364fe0cc23f7fe9118b89e4&language=pt-br&page=1`
+      `/movie/popular?language=pt-br&page=1`
     );
     console.log(response);
     yield put(loadRecomendedsSuccess(response));

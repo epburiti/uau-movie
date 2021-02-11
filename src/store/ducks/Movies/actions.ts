@@ -1,5 +1,5 @@
 import { MoviesTypes } from "./types";
-
+import { Movie } from "./types";
 // primeiro parametro é o type do action e o segundo um pay load se tiver
 export const searchRequest = (searchValue: String, page: number) => ({
   type: MoviesTypes.SEARCH_REQUEST,
@@ -7,7 +7,7 @@ export const searchRequest = (searchValue: String, page: number) => ({
   page,
 });
 
-export const searchSuccess = (object: any) => ({
+export const searchSuccess = (object: Movie) => ({
   type: MoviesTypes.SEARCH_SUCCESS,
   payload: object,
 });
@@ -15,7 +15,7 @@ export const loadRecomendedsRequest = () => ({
   type: MoviesTypes.LOAD_RECOMENDEDS_REQUEST,
 });
 
-export const loadRecomendedsSuccess = (object: any) => ({
+export const loadRecomendedsSuccess = (object: Movie) => ({
   type: MoviesTypes.LOAD_RECOMENDEDS_SUCCESS,
   payload: object,
 });

@@ -37,7 +37,11 @@ const Header = () => {
         <div className="button-custom">
           <button
             onClick={() => {
-              dispatch(MoviesActions.searchRequest(searchValue, 1));
+              if (searchValue.trim() == "") {
+                dispatch(MoviesActions.loadRecomendedsRequest());
+              } else {
+                dispatch(MoviesActions.searchRequest(searchValue, 1));
+              }
             }}
           >
             Pesquisar

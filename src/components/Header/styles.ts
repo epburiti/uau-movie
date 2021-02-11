@@ -17,7 +17,7 @@ export const Container = styled.div`
     color: #fff;
     font-weight: bold;
     opacity: 1;
-    text-shadow: 0 0 15px #9c5cbd;
+    /* text-shadow: 0 0 1.5rem var(--red); */
   }
 
   .searchItems {
@@ -47,7 +47,6 @@ export const Container = styled.div`
     button {
       width: 100%;
       height: 100%;
-      background: 0 0;
       border: none;
       padding: 0 3rem;
       font-size: 1.8rem;
