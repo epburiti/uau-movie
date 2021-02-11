@@ -11,7 +11,7 @@ export const ContainerButtonsPagination = styled.div`
 
     button {
       display: inline-block;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       text-align: center;
       text-transform: uppercase;
       color: var(--white);
@@ -33,6 +33,24 @@ export const ContainerButtonsPagination = styled.div`
     }
     button.active {
       background: rgba(255, 51, 51, 0.7);
+    }
+  }
+  .icon-custom {
+    display: none;
+  }
+  .text-custom {
+    display: block;
+  }
+
+  @media (max-width: 500px) {
+    button {
+      padding: 0 1.4rem !important;
+      .icon-custom {
+        display: block;
+      }
+      .text-custom {
+        display: none;
+      }
     }
   }
 `;

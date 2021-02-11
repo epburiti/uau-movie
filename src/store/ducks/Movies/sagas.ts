@@ -25,7 +25,6 @@ export function* loadRecomendeds(): SagaIterator {
       api.get,
       `/movie/popular?language=pt-br&page=1`
     );
-    console.log(response);
     yield put(loadRecomendedsSuccess(response));
   } catch (err) {
     console.error(err);

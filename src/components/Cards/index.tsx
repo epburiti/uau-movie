@@ -3,16 +3,19 @@ import api from "./../../services/api";
 
 import { ContainerCards } from "./styles";
 import NotFound from "./../../assets/404.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "./../../store/ducks/rootReducer";
 import { Movie } from "./../../store/ducks/Movies/types";
+import { useStateIfMounted } from "use-state-if-mounted";
+
 const Cards = () => {
   const movies = useSelector((state: RootState) => state.Movies.data.results);
-  const [genre, setGenre] = useState(Object);
+  const [genre, setGenre] = useStateIfMounted(Object);
 
   useEffect(() => {
     getGenre();
   }, []);
+
   async function getGenre() {
     const response = await api.get("/genre/movie/list?");
     var object = response.data.genres.reduce(

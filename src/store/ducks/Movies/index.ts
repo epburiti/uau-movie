@@ -15,7 +15,6 @@ const INITIAL_STATE = {
 };
 
 const reducer = (state = INITIAL_STATE, action: any) => {
-  console.log("action: ", action);
   switch (action.type) {
     case MoviesTypes.SEARCH_REQUEST:
     case MoviesTypes.LOAD_RECOMENDEDS_REQUEST:

@@ -5,8 +5,9 @@ import Header from "./../../components/Header/index";
 import Cards from "./../../components/Cards/index";
 import Loading from "./../../components/Loading/index";
 import { useDispatch, useSelector } from "react-redux";
-import api from "./../../services/api";
 import * as MoviesActions from "./../../store/ducks/Movies/actions";
+
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
 
 import { Container, ContainerButtonsPagination } from "./styles";
 
@@ -52,7 +53,12 @@ const Home = () => {
                   );
                 }}
               >
-                Anterior
+                <p className="text-custom">Anterior</p>
+                <AiOutlineDoubleLeft
+                  size={20}
+                  color="white"
+                  className="icon-custom"
+                />
               </button>
             )}
             {myPagiableButtons.map((item: number, index: number) => (
@@ -78,7 +84,12 @@ const Home = () => {
                     );
                   }}
                 >
-                  Próximo
+                  <p className="text-custom">Próximo</p>
+                  <AiOutlineDoubleRight
+                    size={20}
+                    color="white"
+                    className="icon-custom"
+                  />
                 </button>
               )}
           </div>
