@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin: 0 auto;
+
   padding: 3rem;
   img {
     width: 10rem;
@@ -12,51 +14,25 @@ export const Container = styled.div`
     text-transform: uppercase;
     text-align: center;
     width: 100%;
-    color: var(--black);
+    color: #fff;
     font-weight: bold;
     opacity: 1;
-    /* text-shadow: 0 0 15px var(--red); */
+    text-shadow: 0 0 15px #9c5cbd;
   }
 
   .searchItems {
     display: flex;
+    justify-content: center;
     margin-top: 8rem;
-    .searchBar,
-    .selectContainer {
+    .searchBar {
       height: 5rem;
       border-radius: 0.5rem;
-      background: rgba(255, 51, 51, 0.3);
+      background: rgba(230, 221, 240, 0.1);
       position: relative;
     }
-    .selects {
-      width: 30%;
-      .selectContainer {
-        width: 100%;
-        margin-left: 1%;
-        .options {
-          background-color: rgba(0, 0, 0, 0.1);
-          font-size: 1.4rem;
-        }
-        select {
-          .options:checked {
-            color: #fff;
-            font-weight: bold;
-            opacity: 1;
-            text-shadow: 0 0 15px #9c5cbd;
-          }
 
-          .options {
-            text-transform: uppercase;
-            cursor: pointer;
-            background: #5041c3;
-            color: var(--white);
-            font-weight: 400;
-          }
-        }
-      }
-    }
     .searchBar {
-      width: 50%;
+      width: 80%;
     }
     .icone {
       position: absolute;
@@ -68,7 +44,6 @@ export const Container = styled.div`
     }
 
     input,
-    select,
     button {
       width: 100%;
       height: 100%;
@@ -77,7 +52,7 @@ export const Container = styled.div`
       padding: 0 3rem;
       font-size: 1.8rem;
       font-weight: 300;
-      color: var(--black);
+      color: var(--white);
       cursor: pointer;
     }
   }
@@ -86,7 +61,7 @@ export const Container = styled.div`
   }
   button {
     background: var(--red) !important;
-    color: var(--white) !important;
+    color: var(--white);
     border-radius: 5%;
   }
 `;

@@ -4,8 +4,7 @@ export default createGlobalStyle`
  :root {
     --white: #FFFFFF;
     --red: #FF3333;
-    --black: #4E4E4E;
-    --background: #fff;
+    --background: #130b1a;
     --geoit: 'geoit',sans-serif;
   }
   *{

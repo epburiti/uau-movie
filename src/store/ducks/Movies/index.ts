@@ -16,8 +16,8 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action: any) => {
   switch (action.type) {
     case MoviesTypes.SEARCH_REQUEST:
+    case MoviesTypes.LOAD_RECOMENDEDS_REQUEST:
       return produce(state, (draft) => {
-        console.log(action);
         draft.data = {
           page: 0,
           results: [],
@@ -26,10 +26,11 @@ const reducer = (state = INITIAL_STATE, action: any) => {
         };
         draft.loading = true;
         draft.error = false;
+        draft.searchValue = action.searchValue;
       });
     case MoviesTypes.SEARCH_SUCCESS:
+    case MoviesTypes.LOAD_RECOMENDEDS_SUCCESS:
       return produce(state, (draft) => {
-        console.log("??: ", action);
         draft.data = action.payload;
         draft.loading = false;
         draft.error = false;
