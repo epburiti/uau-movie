@@ -117,4 +117,10 @@ export const ContainerCards = styled.div`
   h1 {
     color: var(--white);
   }
+
+  @media (max-width: 500px) {
+    .card {
+      margin: 5% 0 5% 0;
+    }
+  }
 `;

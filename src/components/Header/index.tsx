@@ -36,6 +36,7 @@ const Header = () => {
 
         <div className="button-custom">
           <button
+            className="button-custom-search"
             onClick={() => {
               if (searchValue.trim() == "") {
                 dispatch(MoviesActions.loadRecomendedsRequest());

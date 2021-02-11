@@ -14,7 +14,7 @@ const Cards = () => {
     getGenre();
   }, []);
   async function getGenre() {
-    const response = await api.get("/genre/movie/list");
+    const response = await api.get("/genre/movie/list?");
     var object = response.data.genres.reduce(
       (obj: any, item: any) => ((obj[item.id] = item.name), obj),
       {}

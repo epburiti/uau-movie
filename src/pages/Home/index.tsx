@@ -66,20 +66,21 @@ const Home = () => {
                 {item}
               </button>
             ))}
-            {dataMovies.total_pages != dataMovies.page && (
-              <button
-                onClick={() => {
-                  dispatch(
-                    MoviesActions.searchRequest(
-                      searchValueMovie,
-                      dataMovies.page + 1
-                    )
-                  );
-                }}
-              >
-                Próximo
-              </button>
-            )}
+            {dataMovies.total_pages != dataMovies.page &&
+              dataMovies.results.length && (
+                <button
+                  onClick={() => {
+                    dispatch(
+                      MoviesActions.searchRequest(
+                        searchValueMovie,
+                        dataMovies.page + 1
+                      )
+                    );
+                  }}
+                >
+                  Próximo
+                </button>
+              )}
           </div>
         </ContainerButtonsPagination>
       )}

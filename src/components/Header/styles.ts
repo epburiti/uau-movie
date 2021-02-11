@@ -57,10 +57,23 @@ export const Container = styled.div`
   }
   .button-custom {
     margin-left: 1%;
+    height: 5rem;
   }
   button {
     background: var(--red) !important;
     color: var(--white);
     border-radius: 5%;
+  }
+
+  @media (max-width: 500px) {
+    .button {
+      width: 100%;
+    }
+    .searchItems {
+      flex-wrap: wrap;
+      .button-custom {
+        margin-top: 1rem;
+      }
+    }
   }
 `;
